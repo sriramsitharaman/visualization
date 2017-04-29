@@ -15,7 +15,7 @@ ${demo.css}
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="heatchart_data.js"></script>
 
-<div id="container" style="height: 400px; min-width: 600px; max-width: 1000px; margin: 0 auto"></div>
+<div id="container" style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
 
 
 		<script type="text/javascript">
@@ -32,28 +32,22 @@ Highcharts.chart('container', {
 
 
     title: {
-        text: 'Avg. Sentiment per hour - World Continents'
+        text: 'Tweets in a day - World Countries'
     },
 
     xAxis: {
-        categories: hour
+        categories: countries
     },
 
     yAxis: {
-        categories: continent,
+        categories: time,
         title: null
     },
 
     colorAxis: {
-        min: minval,
-		max:maxval,
-		minColor:'rgba(140,142,138,0.80)',
-		maxColor:'rgba(0,255,0,0.80)'
-		//stops: [
-        //    [minval, ],
-        //    [0, 'rgba(12,205,214,0.80)'],
-        //    [maxval,  'rgba(0,255,0,0.5)']
-        //],
+        min: 0,
+        minColor: '#FFFFFF',
+        maxColor: Highcharts.getOptions().colors[0]
     },
 
     legend: {
@@ -67,8 +61,8 @@ Highcharts.chart('container', {
 
     tooltip: {
         formatter: function () {
-            return '<b> Hour ' + this.series.xAxis.categories[this.point.x] + '</b> <br><b>' +
-                Math.round(this.point.value*100) + ' %</b> ' + this.series.yAxis.categories[this.point.y] + '</b>';
+            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> <br><b>' +
+                this.point.value + '</b> Tweets <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
         }
     },
   credits: {
@@ -79,7 +73,7 @@ Highcharts.chart('container', {
         borderWidth: 1,
         data: data,
         dataLabels: {
-            enabled: false,
+            enabled: true,
             color: '#000000'
         }
     }]
