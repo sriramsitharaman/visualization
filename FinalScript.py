@@ -21,10 +21,10 @@ nltk.download('stopwords')
 
 runCount=0
 #Variables that contains the user credentials to access Twitter API 
-access_token = "141817420-ViMO9ic2MuVmjw4u04CACINnCA0MIJEs2uaPbkYX"
-access_token_secret = "LWNQKJYkHJnrAjNsH7LnrkKWmnf5qZ9akizidiWjbLhOy"
-consumer_key = "SyLwuJP6pzy4FevmLMOmcWdpf"
-consumer_secret = "XfZkuRRj5yqVmReRkAVvVFm9t6vaPHVeoXEdg85Iuqb8k524pU"
+access_token = ""
+access_token_secret = ""
+consumer_key = ""
+consumer_secret = ""
 
 tweets_data = []
 
